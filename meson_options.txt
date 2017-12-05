@@ -1,0 +1,42 @@
+option('static', type: 'boolean', value: false,
+	description: 'Static link (useful for running on hosts outside the build environment')
+option('pie', type: 'boolean', value: false,
+	description: 'Build position-independent executable (PIE)')
+option('so', type: 'boolean', value: false,
+	description: 'Build shared object (SO) instead of executable')
+option('mode', type: 'combo', choices: ['debug', 'release', 'all'], value: 'all')
+
+# TODO
+# option('with', dest='artifacts', action='append', choices=all_artifacts, default=[])
+
+option('cflags', type: 'string', value: '',
+	description: 'Extra flags for the C++ compiler')
+option('ldflags', type: 'string', value: '',
+	decription: 'Extra flags for the linker')
+option('compiler', type: 'combo', choices: ['g++'], value: 'g++',
+	description:  'C++ compiler path')
+option('c-compiler', type: 'combo', choices: ['gcc'], value:'gcc',
+	description:  'C compiler path (for bundled libraries such as dpdk and c-ares)')
+option('with-osv', type: 'boolean', value: false,
+	description:  'Shortcut for compile for OSv')
+option('enable-dpdk', type: 'boolean', value: false,
+	description:  'Enable dpdk (from included dpdk sources)')
+option('dpdk-target', type: 'string', value: '',
+	description:  'Path to DPDK SDK target location (e.g. <DPDK SDK dir>/x86_64-native-linuxapp-gcc)')
+option('debuginfo', type: 'boolean', value: true,
+	description:  'Enable/disable compiler debug information generation')
+option('tests-debuginfo', type: 'boolean', value: false,
+	description: 'Enable/disable compiler debug information generation for tests')
+option('static-stdc++', type: 'boolean', value: true,
+	description:  'Link libgcc and libstdc++ statically')
+option('static-boost', type: 'boolean', value: true,
+	description:  'Link with boost statically')
+options('enable-hwloc', type: 'boolean', value: false, description: 'hwloc support')
+option('enable-gcc6-concepts', type: 'boolean', value: false,
+	description:'enable experimental support for C++ Concepts as implemented in GCC 6')
+option('enable-alloc-failure-injector', type: 'boolean', value: false,
+	description: 'enable allocation failure injection')
+option('enable-exception-scalability-workaround', type: 'boolean', value: false,
+	description: 'disabling override of dl_iterate_phdr symbol to workaround C++ exception scalability issues')
+option('allocator-page-size', type: 'boolean', value: false,
+	description: 'override allocator page size')
