@@ -12,7 +12,7 @@ option('mode', type: 'combo', choices: ['debug', 'release', 'all'], value: 'all'
 option('cflags', type: 'string', value: '',
 	description: 'Extra flags for the C++ compiler')
 option('ldflags', type: 'string', value: '',
-	decription: 'Extra flags for the linker')
+	description: 'Extra flags for the linker')
 option('compiler', type: 'combo', choices: ['g++'], value: 'g++',
 	description:  'C++ compiler path')
 option('c-compiler', type: 'combo', choices: ['gcc'], value:'gcc',
@@ -27,11 +27,11 @@ option('debuginfo', type: 'boolean', value: true,
 	description:  'Enable/disable compiler debug information generation')
 option('tests-debuginfo', type: 'boolean', value: false,
 	description: 'Enable/disable compiler debug information generation for tests')
-option('static-stdc++', type: 'boolean', value: true,
+option('static-stdcpp', type: 'boolean', value: true,
 	description:  'Link libgcc and libstdc++ statically')
 option('static-boost', type: 'boolean', value: true,
 	description:  'Link with boost statically')
-options('enable-hwloc', type: 'boolean', value: false, description: 'hwloc support')
+option('enable-hwloc', type: 'boolean', value: false, description: 'hwloc support')
 option('enable-gcc6-concepts', type: 'boolean', value: false,
 	description:'enable experimental support for C++ Concepts as implemented in GCC 6')
 option('enable-alloc-failure-injector', type: 'boolean', value: false,
